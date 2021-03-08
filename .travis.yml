@@ -6,7 +6,6 @@ cache: pip
 install: pip install -r app/requirements.txt
 before_script: cd app
 script:
-    - python -m pytest
     - cd ..
     - docker build -t asifaman06/devops-challenge .
 env:
