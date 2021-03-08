@@ -25,8 +25,8 @@ You may use provided `docker-compose.yml` to run prebuilt container from dockerh
 Following commands will start everything you needed:
 
 ```bash
-wget https://raw.githubusercontent.com/vd2org/devops-challenge/master/application.env.tamplate
-wget https://raw.githubusercontent.com/vd2org/devops-challenge/master/docker-compose.yml
+wget https://raw.githubusercontent.com/asifaman06/devops-challenge/master/application.env.tamplate
+wget https://raw.githubusercontent.com/asifaman06/devops-challenge/master/docker-compose.yml
 mv application.env.tamplate application.env
 vim application.env
 docker-compose -d up
