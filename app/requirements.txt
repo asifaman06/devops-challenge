@@ -1,0 +1,4 @@
+boto3==1.9.107
+Flask==1.0.2
+uwsgi==2.0.18
+pytest

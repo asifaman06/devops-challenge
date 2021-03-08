@@ -1,0 +1,18 @@
+dist: xenial
+sudo: required
+language: python
+python: 3.7
+cache: pip
+install: pip install -r app/requirements.txt
+before_script: cd app
+script:
+    - python -m pytest
+    - cd ..
+    - docker build -t asifaman06/devops-challenge .
+env:
+  - BOTO_CONFIG=/dev/null
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "main" ]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push asifaman06/devops-challenge;
+    fi

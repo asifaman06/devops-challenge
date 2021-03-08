@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  application:
+    container_name: "application"
+    image: asifaman06/devops-challenge:latest
+    env_file: application.env
+    restart: on-failure
+    ports:
+      - "127.0.0.1:5000:5000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:5000/health"]
+      interval: 2m
+      timeout: 10s
+      retries: 3
+      start_period: 30s
